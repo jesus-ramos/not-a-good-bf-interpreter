@@ -201,7 +201,7 @@ static int bf_int(FILE *infile)
             op_arr[i].linear = -op_arr[i].d[-op_arr[i].offset];
             if (op_arr[i].linear < 0)
             {
-                printf("WARNING: Program contains infinite loop\n");
+                fprintf(stderr, "WARNING: Program contains infinite loop\n");
                 op_arr[i].linear = 0;
             }
         }
