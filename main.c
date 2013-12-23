@@ -288,7 +288,9 @@ static int bf_int(FILE *infile)
 
 static void usage()
 {
-
+    printf("Usage: bfint [-h] [-f input_file]\n");
+    printf("-h: Print this usage message and exit\n");
+    printf("-f input_file: take input from file rather than stdin\n");
 }
 
 int main(int argc, char **argv)
@@ -303,7 +305,7 @@ int main(int argc, char **argv)
         {
             case 'h':
                 usage();
-                break;
+                return 0;
             case 'f':
                 infile = fopen(optarg, "r");
                 if (!infile)
